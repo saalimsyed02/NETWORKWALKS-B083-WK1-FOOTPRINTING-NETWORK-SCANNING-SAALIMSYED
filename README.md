@@ -36,6 +36,38 @@ All activities and commands were executed within a controlled environment. Every
 ## 4. Activities Performed
 
 ### 4.1 Module W2-PM2: Google Hacking Database (GHDB) Footprinting
+## 4. Practical Implementation / Findings
+
+### 4.1 Google Hacking Database (GHDB) Footprinting
+During the reconnaissance phase, advanced Google dork queries were utilized to discover exposed directory listings, publicly accessible webcams, and sensitive files. Below are the specific samples collected:
+
+#### 1. Public Camera Details (Google Dorks Footprinting)
+| # | Google Dork Query | Target URL / Result Reference |
+|---|---|---|
+| 1 | `intitle:"webcamXP" inurl:8080` | `http://109.233.191.130` |
+| 2 | `intitle:"Webcam" inurl:WebCam.htm` | `https://www.lmc.edu/webcam.htm` |
+| 3 | `intitle:"Index of /webcam/"` | `https://ns.ph.liv.ac.uk/webcam/` |
+| 4 | `inurl:webcam site:skylinewebcams.com inurl:roma` | `https://www.skylinewebcams.com/webcam/italia/lazio/roma/piazza-di-spagna.html` |
+| 5 | `inurl:/multi.html intitle:webcam` | `http://68.115.218.130:32479/home.html` |
+| 6 | `intitle:"webcamxp" "Flash JPEG Stream"` | `http://109.233.191.130:8080/` |
+| 7 | `inurl:/ViewerFrame? intitle:"Network Camera NetworkCamera"` | `http://80.152.138.183/ViewerFrame?Mode=Motion&Language=0` |
+| 8 | `intitle:"Biromsoft WebCam" -4.0 -serial ...` | `https://www.stonecircle.us/WebCam/cam.html` |
+| 9 | `"powered by webcamXP" "Pro|Broadcast"` | `http://109.233.191.130:8080/` |
+| 10 | `inurl:"live/cam.html"` | `http://www.insecam.org/en/bytype/webcamxp/` |
+
+#### 2. Specific PDF Documents (Google Dorks Footprinting)
+| # | Google Dork Query | Target URL / Result Reference |
+|---|---|---|
+| 1 | `intitle:index.of "parent directory" mathematics pdf` | `https://www.unm.edu/~megrad/Math/` |
+| 2 | `intitle:index.of "parent directory" calculus pdf` | `https://www.aetkin.com/files/Math%20150%20Calculus%20I/Advanced%20Calculus%20Textbook/` |
+| 3 | `intitle:index.of "parent directory" linear algebra pdf` | `https://math.mit.edu/~gs/linearalgebra/ila6/?trk=public_post_comment-text` |
+| 4 | `intitle:index.of "parent directory" differential equation pdf` | `https://www.aerostudents.com/courses/differential-equations/` |
+| 5 | `intitle:index.of "parent directory" discrete mathematics pdf` | `https://discrete.openmathbooks.org/pdfs/?SD` |
+| 6 | `intitle:index.of "parent directory" probability and statistics pdf` | `https://www.aerostudents.com/courses/probability-and-statistics/` |
+| 7 | `intitle:index.of "parent directory" geometry pdf` | `https://www.cs.tufts.edu/research/geometry/pdf/` |
+| 8 | `intitle:index.of "parent directory" trigonometry pdf` | `http://www.wallace.ccfaculty.org/book/` |
+| 9 | `intitle:index.of "parent directory" hc verma pdf` | `https://discrete.openmathbooks.org/pdfs/?SD` |
+| 10 | `intitle:index.of "parent directory" c++ pdf` | `https://ce.cet.ac.in/downloads/Study%20Material/Computer%20Programming/` |
 * **Objective:** Use advanced search operators (Google Dorks) to discover publicly exposed information, sensitive files, or misconfigured directories related to specific targets.
 * **Step-by-Step Execution:**
   1. Opened a standard web browser and navigated to Google Search / Exploit-DB GHDB.
